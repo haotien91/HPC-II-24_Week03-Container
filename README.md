@@ -32,32 +32,30 @@
 
 ## Setup Instructions
 
-### Art-1 Server Setup
+### Server Part (On Art server)
 1. Create & Enter python environment
 ```bash
 conda create -n <ENV_NAME> python=3.10 -y
 conda activate <ENV_NAME>
 ```
 
-2. Install requirement
+2. Clone the repository
+```bash
+git clone https://github.com/haotien91/HPC-II-24_Week03-Container.git
+cd HPC-II-24_Week03-Container
+```
+
+3. Install requirement
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Install support for GroundingDINO
+4. Install support for GroundingDINO
 ```bash
 pip install -e /home/share/MODELS/GroundingDINO
 ```
 
-### Server Part (On Art server)
-
-1. Clone the repository
-```bash
-git clone <repository-url>
-cd <repository-name>
-```
-
-2. Create environment file
+5. Create environment file
 ```bash
 # Copy the example file
 cp .env.example .env
@@ -68,7 +66,7 @@ cp .env.example .env
 nano .env
 ```
 
-3. Start the server
+6. Start the server
 ```bash
 # Make sure you're in the correct environment
 conda activate <ENV_NAME>
@@ -77,9 +75,12 @@ conda activate <ENV_NAME>
 python server.py
 ```
 
-4. Verify the server is running
+7. Verify the server is running
 - The server should start without any errors
 - You should see a message indicating the server is running on your specified port
+
+8. Then, stop the server with Ctrl-C.
+
 
 ### Local Part (On your computer)
 
@@ -114,7 +115,7 @@ python client.py \
     --port 3038
 ```
 
-## Dockerfile Task
+## Assignment: Dockerfile
 
 Your task is to create a Dockerfile that containerizes the server application. The Dockerfile should:
 
@@ -135,7 +136,7 @@ Tips:
 - Remember to handle the model file paths correctly
 - Think about security best practices
 - Consider using environment variables for configuration
-- Feel free to use ChatGPT, Claude or Gemini.
+- Feel free to use ChatGPT, Claude or Gemini 🥸
 
 ## Testing Your Container
 
@@ -152,12 +153,15 @@ docker run -p <YOUR_PORT>:<YOUR_PORT> \
 
 | WARNING: please use `docker images` to make sure your image name does not collide with others.
 
+
 ## Submission
 
 Submit the following 2 files on EECLASS:
 1. completed Dockerfile
 2. PDF report <STUDENT_ID>_container.pdf
     - You must discuss the result of DINO and YOLO model on EASY and HARD cat pictures
-    - Which one is better? In which part?
+    - A screenshot that you do setup an API
     - Include comparison results for both models on selected test cases
+        - Which one is better?
+        - Why it is better?
 ```
