@@ -1,0 +1,16 @@
+# Web Framework
+fastapi
+uvicorn
+pydantic
+
+# Image Processing
+Pillow
+requests
+
+# Deep Learnpiping
+torch
+ultralytics
+supervision
+
+# Others
+python-dotenv
