@@ -164,4 +164,3 @@ Submit the following 2 files on EECLASS:
     - Include comparison results for both models on selected test cases
         - Which one is better?
         - Why it is better?
-```
